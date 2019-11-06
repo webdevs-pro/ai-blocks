@@ -116,9 +116,9 @@ return $in;
 // plugin updates
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/webdevs-pro/advanced-elementor-widgets',
+	'https://github.com/webdevs-pro/ai-blocks',
 	__FILE__,
-	'advanced-elementor-widgets'
+	'ai-blocks'
 );
 
 
