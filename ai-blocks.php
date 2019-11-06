@@ -21,12 +21,13 @@ include( plugin_dir_path( __FILE__ ) . 'blocks/audio-block.php');
 // GUTENBERG EDITOR WIDTH
 add_action('enqueue_block_editor_assets', function() {
    echo '<style type="text/css">
+   /* EDITOR MAX WIDTH */
    .wp-block {
       max-width: 840px !important;
    }
 
-   /* CATEGORY LIST PRELOADER */
 
+   /* CATEGORY LIST PRELOADER */
    .editor-post-taxonomies__hierarchical-terms-list:empty {
       height: 18px;
       width: 18px;
@@ -55,6 +56,7 @@ add_action('enqueue_block_editor_assets', function() {
          transform: rotate(360deg);
       }
    }
+
 
    .components-panel__body-toggle.components-button:focus {
       outline: none !important;
