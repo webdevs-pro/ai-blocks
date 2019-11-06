@@ -1,0 +1,22 @@
+// Video 
+<!-- wp:acf/ai-yt-video-block 
+{
+   "id":"block_5dac2f34d2c76",
+   "name":"acf/ai-yt-video-block",
+   "data":{
+      "ai_yt_video_block_url":"https://www.youtube.com/watch?v=5qky3L2Q6G4"
+   }
+} 
+/-->
+
+
+// gallery
+<!-- wp:acf/ai-image-gallery-block 
+{
+   "id":"block_5dac5bba333b8",
+   "name":"acf/ai-image-gallery-block",
+   "data":{
+      "ai_image_gallery_block":["1127","1126"]
+   }
+}
+/-->
