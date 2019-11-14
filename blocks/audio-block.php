@@ -74,8 +74,10 @@ function ai_audio_block_render_callback() {
    $image_arr = get_field('ai_image');
    $image_description = get_field('ai_image_description');
    if ($image_arr) {
-      echo '<div class="ai_audio_block">';
-
+      echo '<div class="ai_audio_block ai_block">';
+         echo '<div class="ai_block_container">';
+         
+         echo '</div>';
       echo '</div>';
    }
 }

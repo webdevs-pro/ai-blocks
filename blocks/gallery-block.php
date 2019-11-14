@@ -75,13 +75,15 @@ if( function_exists('acf_register_block_type') ) {
 function ai_image_gallery_block_render_callback() {
    $gallery = get_field('ai_image_gallery_images');
    if ($gallery) {
-      echo "<div class='ai_image_gallery_block'>";
-         $gallery_shortcode = '[gallery ids="';
-         foreach( $gallery as $image ) {
-            $gallery_shortcode .= $image['id'] . ',';
-         }
-         $gallery_shortcode .= '"]';
-         echo do_shortcode($gallery_shortcode);
+      echo "<div class='ai_image_gallery_block ai_block'>";
+         echo '<div class="ai_block_container">';
+            $gallery_shortcode = '[gallery ids="';
+            foreach( $gallery as $image ) {
+               $gallery_shortcode .= $image['id'] . ',';
+            }
+            $gallery_shortcode .= '"]';
+            echo do_shortcode($gallery_shortcode);
+         echo '</div>';
       echo "</div>";
    }
 }

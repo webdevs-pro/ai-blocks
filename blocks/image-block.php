@@ -66,11 +66,13 @@ function ai_image_block_render_callback() {
    $image_arr = get_field('ai_image');
    $image_description = get_field('ai_image_description');
    if ($image_arr) {
-      echo '<div class="ai_image_block">';
-         echo '<div class="ai_image">';
-            echo '<img src="' . $image_arr['url'] . '">';
+      echo '<div class="ai_image_block ai_block">';
+         echo '<div class="ai_block_container">';
+            echo '<div class="ai_image">';
+               echo '<img src="' . $image_arr['url'] . '">';
+            echo '</div>';
+            echo '<div class="ai_image_description">' . $image_description . '</div>';
          echo '</div>';
-         echo '<div class="ai_image_description">' . $image_description . '</div>';
       echo '</div>';
    }
 }

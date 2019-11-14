@@ -71,9 +71,11 @@ function ai_text_block_render_callback() {
    $title = get_field('ai_text_heading');
    $content = get_field('ai_text_content');
    if ($title || $content) {
-      echo '<div class="ai_text_block">';
-         echo '<div class="ai_text_title">' . $title . '</div>';
-         echo '<div class="ai_text_content">' . $content . '</div>';
+      echo '<div class="ai_text_block ai_block">';
+         echo '<div class="ai_block_container">';
+            echo '<div class="ai_text_title">' . $title . '</div>';
+            echo '<div class="ai_text_content">' . $content . '</div>';
+         echo '</div>';
       echo '</div>';
    }
 }
