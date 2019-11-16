@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.1.1
+- Category list removed max-height
+
 1.1
 - Added block container
 
