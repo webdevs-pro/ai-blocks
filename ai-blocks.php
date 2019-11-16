@@ -18,6 +18,7 @@ include( plugin_dir_path( __FILE__ ) . 'blocks/image-block.php');
 include( plugin_dir_path( __FILE__ ) . 'blocks/audio-block.php');
 
 
+
 // GUTENBERG EDITOR WIDTH
 add_action('enqueue_block_editor_assets', function() {
    echo '<style type="text/css">
@@ -61,6 +62,10 @@ add_action('enqueue_block_editor_assets', function() {
    .components-panel__body-toggle.components-button:focus {
       outline: none !important;
    }
+
+   form.metabox-location-side {
+      margin-bottom: 0;
+   }
    </style>';
 });
 
@@ -90,6 +95,7 @@ class ACFAutosize {
 new ACFAutosize();
 
 
+
 // STRIP TAGS, CLASSES AND IDS ON PASTE TO WYSIWYG EDITOR
 add_filter('tiny_mce_before_init', function ($in) {
 $in['paste_preprocess'] = "function(plugin, args){
@@ -109,6 +115,19 @@ $in['paste_preprocess'] = "function(plugin, args){
 return $in;
 });
 
+
+
+// ALLOW ONLY AI BLOCKS
+add_filter( 'allowed_block_types', function( $allowed_blocks ) {
+	return array(
+		'acf/ai-yt-video-block',
+		'acf/ai-text-block',
+		'acf/ai-quote-block',
+      'acf/ai-image-block',
+      'acf/ai-image-gallery-block',
+		'acf/ai-audio-block'
+	);
+});
 
 
 

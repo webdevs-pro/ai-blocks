@@ -77,12 +77,16 @@ function ai_image_gallery_block_render_callback() {
    if ($gallery) {
       echo "<div class='ai_image_gallery_block ai_block'>";
          echo '<div class="ai_block_container">';
-            $gallery_shortcode = '[gallery ids="';
-            foreach( $gallery as $image ) {
-               $gallery_shortcode .= $image['id'] . ',';
-            }
-            $gallery_shortcode .= '"]';
-            echo do_shortcode($gallery_shortcode);
+            echo '<div class="ai_block_gallery">';
+
+               $gallery_shortcode = '[gallery ids="';
+               foreach( $gallery as $image ) {
+                  $gallery_shortcode .= $image['id'] . ',';
+               }
+               $gallery_shortcode .= '"]';
+               echo do_shortcode($gallery_shortcode);
+            echo '</div>';
+
          echo '</div>';
       echo "</div>";
    }
