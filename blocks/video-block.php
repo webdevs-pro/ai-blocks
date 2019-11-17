@@ -10,7 +10,7 @@ if( function_exists('acf_add_local_field_group') ) {
             'key' => 'field_ai_yt_video_block_url',
             'label' => __('YouTube Video', 'ai-blocks'),
             'name' => 'ai_yt_video_block_url',
-            'type' => 'url',
+            'type' => 'oembed',
             'instructions' => __('Paste link to YouTube video here', 'ai-blocks'),
          ),
       ),
@@ -51,6 +51,7 @@ if( function_exists('acf_register_block_type') ) {
 
 // render block
 function ai_yt_video_block_render_callback() {
+   var_dump(get_field('ai_yt_video_block_url'));
    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_field('ai_yt_video_block_url'), $ai_yt_video_id);
    if( array_key_exists(1, $ai_yt_video_id) ) {
       echo '<div class="ai_video_block">';

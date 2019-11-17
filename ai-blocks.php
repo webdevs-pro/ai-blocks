@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.1.1
+ * Version:     1.2
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -57,12 +57,47 @@ add_action('enqueue_block_editor_assets', function() {
          transform: rotate(360deg);
       }
    }
-
-
    .editor-post-taxonomies__hierarchical-terms-list {
-      max-height: none;
-   )
+      max-height: none !important;
+   }
 
+
+   /* block background color */
+   .acf-block-component .acf-block-fields {
+      background: #f1f2f3 !important;
+   }
+
+
+   /* ACF OEMBED RESPONSIVE */
+   .acf-oembed.has-value .canvas-media {
+      position: relative; 
+      padding-bottom: 56.25%;
+   }
+   .acf-oembed.has-value .canvas-media iframe {
+      position: absolute; 
+      left: 0; 
+      top: 0; 
+      width: 100%; 
+      height: 100%;
+   }
+   .acf-oembed .title {
+      padding: 0 !important;
+   }
+   .acf-oembed .title .input-search {
+      padding: 5px 10px !important;
+      font-weight: normal !important;
+   }
+
+
+   .acf-block-fields .acf-oembed .acf-icon {
+      margin-top: -4px;
+   }
+   .acf-block-fields .acf-icon::before {
+      position: absolute;
+      left: 50%;
+      top: 50% !important;
+      transform: translate(-50%,-50%);
+   }
 
    .components-panel__body-toggle.components-button:focus {
       outline: none !important;

@@ -1,6 +1,10 @@
 AI Blocks
 =========
 
+1.2
+- YouTube Block field changed to Oembed
+- Some ACF Block UI fixes
+
 1.1.1
 - Category list removed max-height
 
