@@ -55,8 +55,8 @@ function ai_yt_video_block_render_callback() {
    if( array_key_exists(1, $ai_yt_video_id) ) {
       echo '<div class="ai_video_block">';
          echo '<div class="ai_block_container ai_block">';
-            echo '<div class="ai_video_wrapper" style="position: relative; padding-bottom: 56.25%;">';
-               echo '<iframe style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;" width="1280" height="720" src="https://www.youtube.com/embed/' . $ai_yt_video_id[1] . '" frameborder="0" allowfullscreen></iframe>';
+            echo '<div class="ai_video_wrapper">';
+               echo apply_filters( 'the_content', '<iframe style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;" width="1280" height="720" src="https://www.youtube.com/embed/' . $ai_yt_video_id[1] . '" frameborder="0" allowfullscreen></iframe>');
             echo '</div>';
          echo '</div>';   
       echo '</div>';
