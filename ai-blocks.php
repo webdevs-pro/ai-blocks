@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.2
+ * Version:     1.3
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -19,7 +19,17 @@ include( plugin_dir_path( __FILE__ ) . 'blocks/audio-block.php');
 
 
 
-// GUTENBERG EDITOR WIDTH
+// PRODUCTS BLOCK CSS AND JS
+function ai_blocks_styles() {
+   wp_enqueue_style('ai-blocks-styles', plugin_dir_url( __FILE__ ) . '/ai-blocks-styles.css' );
+   // wp_enqueue_script( 'ai-blocks-script', plugin_dir_url( __FILE__ ) . '/ai-blocks-script.js' , array(), '1.0.0', true, ['wp-blocks'] );
+}
+add_action( 'enqueue_block_assets', 'ai_blocks_styles' );
+// add_action( 'admin_enqueue_scripts', 'ai_blocks_styles' );
+
+
+
+// GUTENBERG EDITOR TWEAKS
 add_action('enqueue_block_editor_assets', function() {
    echo '<style type="text/css">
    /* EDITOR MAX WIDTH */
@@ -138,21 +148,21 @@ new ACFAutosize();
 
 // STRIP TAGS, CLASSES AND IDS ON PASTE TO WYSIWYG EDITOR
 add_filter('tiny_mce_before_init', function ($in) {
-$in['paste_preprocess'] = "function(plugin, args){
-   // Strip all HTML tags except those we have whitelisted
-   var whitelist = 'p,span,b,strong,i,em,h3,h4,h5,h6,ul,li,ol';
-   var stripped = jQuery('<div>' + args.content + '</div>');
-   var els = stripped.find('*').not(whitelist);
-   for (var i = els.length - 1; i >= 0; i--) {
-      var e = els[i];
-      jQuery(e).replaceWith(e.innerHTML);
-   }
-   // Strip all class and id attributes
-   stripped.find('*').removeAttr('id').removeAttr('class');
-   // Return the clean HTML
-   args.content = stripped.html();
-}";
-return $in;
+   $in['paste_preprocess'] = "function(plugin, args){
+      // Strip all HTML tags except those we have whitelisted
+      var whitelist = 'p,span,b,strong,i,em,h3,h4,h5,h6,ul,li,ol';
+      var stripped = jQuery('<div>' + args.content + '</div>');
+      var els = stripped.find('*').not(whitelist);
+      for (var i = els.length - 1; i >= 0; i--) {
+         var e = els[i];
+         jQuery(e).replaceWith(e.innerHTML);
+      }
+      // Strip all class and id attributes
+      stripped.find('*').removeAttr('id').removeAttr('class');
+      // Return the clean HTML
+      args.content = stripped.html();
+   }";
+   return $in;
 });
 
 
@@ -186,101 +196,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 
 
 
-/*
-// PRODUCTS BLOCK CSS AND JS
-function ai_blocks_styles() {
-   wp_enqueue_style('ai-blocks-styles', plugin_dir_url( __FILE__ ) . '/ai-blocks-styles.css' );
-   wp_enqueue_script( 'ai-blocks-script', plugin_dir_url( __FILE__ ) . '/ai-blocks-script.js' , array(), '1.0.0', true, ['wp-blocks'] );
-}
-add_action( 'wp_enqueue_scripts', 'ai_blocks_styles' );
-add_action( 'admin_enqueue_scripts', 'ai_blocks_styles' );
-
-// PRODUCTS EDITOR 
-add_action('admin_head', function() {
-   global $current_screen;
-   if( 'produkty' != $current_screen->post_type )
-       return;
-
-   echo "
-      <style>
-         @media screen and ( min-width: 768px ) {
-            .edit-post-visual-editor .editor-post-title,
-            .edit-post-visual-editor .editor-block-list__block {
-               max-width: none;
-            }
-            .edit-post-layout__metaboxes {
-               padding-left: 46px !important;
-               padding-right: 46px !important;
-            }
-         }
-         .categorychecklist-holder {
-            max-height: none !important;
-         }
-         .edit-post-layout__metaboxes {
-            border-top: none !important;
-         }
-         .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
-            display: none !important;
-            border: none !important;
-         }
-         .acf-block-body .acf-block-fields {
-            border: none !important;
-         }
-         .postbox.acf-postbox > button,
-         .postbox.acf-postbox > h2 {
-            display: none !important;
-         }
-         .acf-fields > .acf-field {
-            border: none !important;
-            margin-top: 20px;
-         }
-         .block-editor-block-list__block.is-hovered > .block-editor-block-list__block-edit:before {
-            box-shadow: none !important;
-            border: none !important;
-         }
-         .block-editor-block-toolbar {
-            display: none !important;
-         }
-
-      </style>
-
-      <script>
-         function replacePostFeaturedImage() { 
-            return function() { 
-               return wp.element.createElement( 
-                  'div', 
-                  {}, 
-                  '' 
-               ); 
-            } 
-         } 
-         wp.hooks.addFilter( 
-            'editor.PostFeaturedImage', 
-            'my-plugin/replace-post-featured-image', 
-            replacePostFeaturedImage
-         );
-      </script>
-   ";
-});
 
 
-// SET BLOCKS TEMPLATE FOR 'PRODUKTY' POST TYPE
-add_action( 'init', function(){
-   $post_type_object = get_post_type_object( 'produkty' );
-   $post_type_object->template = array(
-       array( 'acf/product-table' ),
-   );
-   $post_type_object->template_lock = 'all';
-});
 
 
-// SET FEATURED IMAGE FROM ACF IMAGE FIELD
-add_filter('acf/update_value/name=product_image', function($value, $post_id, $field){
-   if($value != ''){
-      update_post_meta($post_id, '_thumbnail_id', $value);
-   }
-   return $value;
-}, 10, 3);
 
-
-*/

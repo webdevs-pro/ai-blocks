@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.3
+- Audio block
+
 1.2
 - YouTube Block field changed to Oembed
 - Some ACF Block UI fixes

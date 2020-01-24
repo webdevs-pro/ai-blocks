@@ -2,3 +2,153 @@
 	position: relative; 
 	padding-bottom: 56.25%;
 }
+
+
+
+
+/* MUSIC PLAYER */
+.wp-playlist .wp-playlist-current-item img {
+	display: none;
+}
+.mejs-time-total {
+	margin: 8px 0 0 !important;
+	height: 2px !important;
+}
+.mejs-time {
+	padding: 14px 6px 0 !important;
+}
+.wp-playlist-item-album {
+	display: none !important;
+}
+
+.mejs-time-buffering,
+.mejs-time-current,
+.mejs-time-float,
+.mejs-time-float-corner,
+.mejs-time-float-current,
+.mejs-time-hovered,
+.mejs-time-loaded,
+.mejs-time-marker,
+.mejs-time-total {
+	height: 2px !important;
+}
+.mejs-time-handle-content {
+	top: -12px !important;
+	border-radius: 50% !important;
+	display: block !important;
+	-webkit-transform: scale(1) !important;
+		-ms-transform: scale(1) !important;
+			transform: scale(1) !important;
+	width: 16px !important;
+	height: 16px !important;
+	background: #222 !important;
+	border-width: 2px !important;
+}
+.mejs-time-float {
+	opacity: 0;
+}
+.mejs-horizontal-volume-total {
+	height: 2px !important;
+	top: 18px !important;
+}
+.wp-playlist-dark {
+	color: #ccc !important;
+	background: #222 !important;
+}
+.wp-playlist-dark .wp-playlist-playing {
+	background: #3b3b3b !important;
+	font-weight: normal !important;
+}
+.wp-playlist-current-item {
+	height: 100px !important;
+	margin-top: 10px;
+}
+.wp-playlist-current-item .wp-playlist-caption {
+	max-width: 100% !important;
+	text-align: center;
+}
+.wp-playlist-item-meta.wp-playlist-item-title {
+	font-size: 16px !important;
+	font-weight: 700 !important;
+}
+.wp-playlist-item {
+	border-bottom: none !important;
+	padding: 3px 10px !important;
+}
+.wp-playlist-item-artist,
+.wp-playlist-item-title	{
+	font-size: 13px  !important;
+	text-transform: none !important;
+}
+.wp-playlist-item-length {
+	line-height: 2 !important;
+	margin-right: 9px !important;
+}
+.mejs-time-float {
+	display: block !important;
+}
+.audio_playlist_controls {
+	width: 150px;
+	height: 40px;
+	margin: 15px auto;
+	position: relative;
+	cursor: pointer;
+}
+
+
+.audio_playlist_controls .ap_btn_prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 40px;
+	overflow: hidden;
+	background: url('images/play.svg') no-repeat 0 0;
+	background-size: 150px;
+	opacity: 0.9;
+	transition: filter 200ms;
+}
+.audio_playlist_controls .ap_btn_play {
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 50px;
+	height: 40px;
+	overflow: hidden;
+	background: url('images/play.svg') no-repeat -50px 0;
+	background-size: 150px;
+	opacity: 0.9;
+	transition: filter 200ms;
+}		
+.audio_playlist_controls .ap_btn_next {
+	position: absolute;
+	top: 0;
+	left: 100px;
+	width: 50px;
+	height: 40px;
+	overflow: hidden;
+	background: url('images/play.svg') no-repeat -100px 0;
+	background-size: 150px;
+	opacity: 0.9;
+	transition: filter 200ms;
+}
+.ap_btn_play.played {
+	background-position: -50px -40px;
+}
+
+
+.ap_btn_play:hover,
+.ap_btn_prev:hover,
+.ap_btn_next:hover {
+	opacity: 1;
+	transition: filter 200ms;
+	-webkit-filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+	filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+.mejs-playpause-button {
+	display: none;
+}
+.music_album_gallery_image {
+	margin-bottom: 10px;
+}
