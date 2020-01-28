@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.3
+ * Version:     1.4
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -122,6 +122,7 @@ add_action('enqueue_block_editor_assets', function() {
 
 
 // SCRIPT TO AUTOHEIGHT FOR ACF WYSIWYG AND TEXTAREA EDITOR
+// add class `autosize` to field to work
 class ACFAutosize {
 	public function __construct() {
 		// echo javascript
@@ -168,16 +169,16 @@ add_filter('tiny_mce_before_init', function ($in) {
 
 
 // ALLOW ONLY AI BLOCKS
-add_filter( 'allowed_block_types', function( $allowed_blocks ) {
-	return array(
-		'acf/ai-yt-video-block',
-		'acf/ai-text-block',
-		'acf/ai-quote-block',
-      'acf/ai-image-block',
-      'acf/ai-image-gallery-block',
-		'acf/ai-audio-block'
-	);
-});
+// add_filter( 'allowed_block_types', function( $allowed_blocks ) {
+// 	return array(
+// 		'acf/ai-yt-video-block',
+// 		'acf/ai-text-block',
+// 		'acf/ai-quote-block',
+//       'acf/ai-image-block',
+//       'acf/ai-image-gallery-block',
+// 		'acf/ai-audio-block'
+// 	);
+// });
 
 
 

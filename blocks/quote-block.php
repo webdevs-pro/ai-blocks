@@ -72,10 +72,10 @@ function ai_quote_block_render_callback() {
    if ($title || $content) {
       echo '<div class="ai_quote_block ai_block">';
          echo '<div class="ai_block_container">';
-            echo '<div class="ai_quote_block_wrapper">';
-               echo '<div class="ai_quote_title">' . $title . '</div>';
-               echo '<div class="ai_quote_content">' . $content . '</div>';
-            echo '</div>';
+            echo '<blockquote class="ai_quote_block_wrapper">';
+               echo '<cite class="ai_quote_title">' . $title . '</cite>';
+               echo '<p class="ai_quote_content">' . $content . '</p>';
+            echo '</blockquote>';
          echo '</div>';
       echo '</div>';
    }

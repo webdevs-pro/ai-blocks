@@ -77,7 +77,9 @@ function ai_audio_block_render_callback() {
          echo '<div class="ai_block_container">';
          $playlist_ids = array();
          foreach( $audio_arr as $audio_file ) {
-            $id = $audio_file['ai_audio_track']['id'];
+            if (isset($audio_file['ai_audio_track']['id'])) {
+               $id = $audio_file['ai_audio_track']['id'];
+            }
             if($id){
                $playlist_ids[] = $id;
             }

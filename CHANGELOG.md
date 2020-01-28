@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.4
+- Proper tags for headings and quotes
+
 1.3
 - Audio block
 
