@@ -161,22 +161,22 @@ function ai_blocks_editor_allowed_blocks_callback($args) {
 
 // AI BLOCKS
 $options = get_option('ai_blocks_settings')['enabled_ai_blocks'];
-if ($options['text-block']) {
+if (isset($options['text-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/text-block.php');
 }
-if ($options['quote-block']) {
+if (isset($options['quote-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/quote-block.php');
 }
-if ($options['video-block']) {
+if (isset($options['video-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/video-block.php');
 }
-if ($options['image-block']) {
+if (isset($options['image-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/image-block.php');
 }
-if ($options['gallery-block']) {
+if (isset($options['gallery-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/gallery-block.php');
 }
-if ($options['audio-block']) {
+if (isset($options['audio-block'])) {
    include( AI_BLOCKS_PLUGIN_DIR . 'blocks/audio-block.php');
 }
 
@@ -187,25 +187,25 @@ if ($options['audio-block']) {
 add_filter( 'allowed_block_types', function( $allowed_blocks ) {
 
    $options = get_option('ai_blocks_settings');
-   if ($options['editor_allowed_blocks']['enable']) {
+   if (isset($options['editor_allowed_blocks']['enable'])) {
       $allowed_blocks = array_values(array_filter(explode(PHP_EOL, $options['editor_allowed_blocks']['blocks'])));
 
-      if ($options['enabled_ai_blocks']['text-block']) {
+      if (isset($options['enabled_ai_blocks']['text-block'])) {
          array_push($allowed_blocks,'acf/ai-text-block');
       }
-      if ($options['enabled_ai_blocks']['quote-block']) {
+      if (isset($options['enabled_ai_blocks']['quote-block'])) {
          array_push($allowed_blocks,'acf/ai-quote-block');
       }
-      if ($options['enabled_ai_blocks']['video-block']) {
+      if (isset($options['enabled_ai_blocks']['video-block'])) {
          array_push($allowed_blocks,'acf/ai-video-block');
       }
-      if ($options['enabled_ai_blocks']['image-block']) {
+      if (isset($options['enabled_ai_blocks']['image-block'])) {
          array_push($allowed_blocks,'acf/ai-image-block');
       }
-      if ($options['enabled_ai_blocks']['gallery-block']) {
+      if (isset($options['enabled_ai_blocks']['gallery-block'])) {
          array_push($allowed_blocks,'acf/ai-gallery-block');
       }
-      if ($options['enabled_ai_blocks']['audio-block']) {
+      if (isset($options['enabled_ai_blocks']['audio-block'])) {
          array_push($allowed_blocks,'acf/ai-audio-block');
       }
    }
