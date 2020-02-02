@@ -54,12 +54,13 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-image-gallery-block',
-         'title' => __('Image Gallery', 'ai-blocks'),
+         'title' => __('AI Image Gallery', 'ai-blocks'),
          'description' => __('This block allow to you to display gallery of images.', 'ai-blocks'),
          'render_callback' => 'ai_image_gallery_block_render_callback',
          'icon' => array(
             'src' => 'format-gallery'
          ),
+         'category' => 'ai-blocks',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

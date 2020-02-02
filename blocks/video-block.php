@@ -31,13 +31,14 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-yt-video-block',
-         'title' => __('YouTube Video', 'ai-blocks'),
+         'title' => __('AI YouTube Video', 'ai-blocks'),
          'description' => __('This block allow to you to embed responsive (16:9 aspect ratio) video from YouTube.', 'ai-blocks'),
          'render_callback' => 'ai_yt_video_block_render_callback',
          'icon' => array(
             'src' => 'video-alt3',
             'foreground' => '#FF0000',
          ),
+         'category' => 'ai-blocks',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

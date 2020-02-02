@@ -43,13 +43,14 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-image-block',
-         'title' => __('Image', 'ai-blocks'),
+         'title' => __('AI Image', 'ai-blocks'),
          'description' => __('Image block with description.', 'ai-blocks'),
          'render_callback' => 'ai_image_block_render_callback',
          'icon' => array(
             'src' => 'format-image',
             'foreground' => '#000',
          ),
+         'category' => 'ai-blocks',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

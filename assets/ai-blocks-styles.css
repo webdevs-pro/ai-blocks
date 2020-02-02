@@ -1,3 +1,4 @@
+/* YOUTUBE VIDEO */
 .ai_video_wrapper {
 	position: relative; 
 	padding-bottom: 56.25%;
@@ -51,6 +52,17 @@
 	height: 2px !important;
 	top: 18px !important;
 }
+.mejs-horizontal-volume-current::after {
+	content: '1';
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	height: 16px;
+	width: 16px;
+	background: #222 !important;
+	border-radius: 50%;
+	border: 2px solid hsla(0,0%,100%,.9);
+}
 .wp-playlist-dark {
 	color: #ccc !important;
 	background: #222 !important;
@@ -103,7 +115,7 @@
 	width: 50px;
 	height: 40px;
 	overflow: hidden;
-	background: url('images/play.svg') no-repeat 0 0;
+	background: url('../assets/images/play.svg') no-repeat 0 0;
 	background-size: 150px;
 	opacity: 0.9;
 	transition: filter 200ms;
@@ -115,7 +127,7 @@
 	width: 50px;
 	height: 40px;
 	overflow: hidden;
-	background: url('images/play.svg') no-repeat -50px 0;
+	background: url('../assets/images/play.svg') no-repeat -50px 0;
 	background-size: 150px;
 	opacity: 0.9;
 	transition: filter 200ms;
@@ -127,7 +139,7 @@
 	width: 50px;
 	height: 40px;
 	overflow: hidden;
-	background: url('images/play.svg') no-repeat -100px 0;
+	background: url('../assets/images/play.svg') no-repeat -100px 0;
 	background-size: 150px;
 	opacity: 0.9;
 	transition: filter 200ms;

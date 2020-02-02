@@ -48,13 +48,14 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-text-block',
-         'title' => __('Text block', 'ai-blocks'),
+         'title' => __('AI Text + Heading', 'ai-blocks'),
          'description' => __('Text block with heading.', 'ai-blocks'),
          'render_callback' => 'ai_text_block_render_callback',
          'icon' => array(
             'src' => 'editor-alignleft',
             'foreground' => '#000',
          ),
+         'category' => 'ai-blocks',
          'mode' => 'auto',
          'supports' => array(
            'align' => false,

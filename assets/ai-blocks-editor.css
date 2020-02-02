@@ -1,0 +1,84 @@
+/* EDITOR MAX WIDTH */
+.wp-block {
+   max-width: 840px !important;
+}
+
+
+/* CATEGORY LIST PRELOADER */
+.editor-post-taxonomies__hierarchical-terms-list:empty {
+   height: 18px;
+   width: 18px;
+   position: relative;
+   overflow: hidden;
+   border-radius: 50%;
+   background: #A1A9B1;
+}
+.editor-post-taxonomies__hierarchical-terms-list:empty:after {
+   content: "";
+   position: absolute;
+   background-color: #fff;
+   top: 3px;
+   left: 3px;
+   width: 4px;
+   height: 4px;
+   border-radius: 50%;
+   transform-origin: 6px 6px;
+   animation: ai-360-rotate 1s infinite linear;
+}
+@keyframes ai-360-rotate {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+.editor-post-taxonomies__hierarchical-terms-list {
+   max-height: none !important;
+}
+
+
+/* block background color */
+.acf-block-component .acf-block-fields {
+   background: #f1f2f3 !important;
+}
+
+
+/* ACF OEMBED RESPONSIVE */
+.acf-oembed.has-value .canvas-media {
+   position: relative; 
+   padding-bottom: 56.25%;
+}
+.acf-oembed.has-value .canvas-media iframe {
+   position: absolute; 
+   left: 0; 
+   top: 0; 
+   width: 100%; 
+   height: 100%;
+}
+.acf-oembed .title {
+   padding: 0 !important;
+}
+.acf-oembed .title .input-search {
+   padding: 5px 10px !important;
+   font-weight: normal !important;
+}
+
+
+.acf-block-fields .acf-oembed .acf-icon {
+   margin-top: -4px;
+}
+.acf-block-fields .acf-icon::before {
+   position: absolute;
+   left: 50%;
+   top: 50% !important;
+   transform: translate(-50%,-50%);
+}
+
+.components-panel__body-toggle.components-button:focus {
+   outline: none !important;
+}
+
+form.metabox-location-side {
+   margin-bottom: 0;
+}

@@ -47,13 +47,14 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-quote-block',
-         'title' => __('Quote', 'ai-blocks'),
+         'title' => __('AI Quote', 'ai-blocks'),
          'description' => __('This block allow to you to show quote or bible verse.', 'ai-blocks'),
          'render_callback' => 'ai_quote_block_render_callback',
          'icon' => array(
             'src' => 'editor-quote',
             'foreground' => '#000',
          ),
+         'category' => 'ai-blocks',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

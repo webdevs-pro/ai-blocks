@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.5
+- Plugin settings page
+
 1.4
 - Proper tags for headings and quotes
 

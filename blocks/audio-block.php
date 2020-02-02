@@ -51,13 +51,14 @@ if( function_exists('acf_register_block_type') ) {
    add_action('acf/init', function() {
       acf_register_block_type(array(
          'name' => 'ai-audio-block',
-         'title' => __('Audio', 'ai-blocks'),
+         'title' => __('AI Audio Playlist', 'ai-blocks'),
          'description' => __('Single audio or music album player block with description.', 'ai-blocks'),
          'render_callback' => 'ai_audio_block_render_callback',
          'icon' => array(
             'src' => 'format-audio',
             'foreground' => '#000',
          ),
+         'category' => 'ai-blocks',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,
