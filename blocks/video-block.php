@@ -39,7 +39,7 @@ if( function_exists('acf_register_block_type') ) {
             'foreground' => '#FF0000',
          ),
          //'category' => 'ai-blocks',
-         'category' => '',
+         'category' => 'common',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

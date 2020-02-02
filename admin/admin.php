@@ -15,7 +15,7 @@ add_action('admin_menu', 'ai_blocks_add_plugin_menu');
 function ai_blocks_options() {
 		?>
 		<div class="wrap">
-			<h2><?php echo __('Advanced Elementor Widgets Settings', 'ai-blocks'); ?></h2>
+			<h2><?php echo __('AI Blocks Settings', 'ai-blocks'); ?></h2>
 			<?php settings_errors('ai-blocks-options'); ?> 
 
 

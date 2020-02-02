@@ -8,11 +8,20 @@ if( function_exists('acf_add_local_field_group') ) {
       'title' => '1',
       'fields' => array(
          array(
+            'key' => 'field_ai_audio_block_image',
+            'label' => __('Album Image', 'ai-blocks'),
+            'name' => 'ai_audio_immage',
+            'type' => 'image',
+            'instructions' => '',
+            'return_format' => 'array',
+            'preview_size' => 'full',
+         ),
+         array(
             'key' => 'field_ai_audio_block_repeater',
-            'label' => __('Audio', 'ai-blocks'),
+            'label' => __('Audio Tracks', 'ai-blocks'),
             'name' => 'ai_audio_repeater',
             'type' => 'repeater',
-            'instructions' => __('Add track to playlist', 'ai-blocks'),
+            'instructions' => '',
             'collapsed' => '',
             'min' => 0,
             'max' => '',
@@ -52,14 +61,14 @@ if( function_exists('acf_register_block_type') ) {
       acf_register_block_type(array(
          'name' => 'ai-audio-block',
          'title' => __('AI Audio Playlist', 'ai-blocks'),
-         'description' => __('Single audio or music album player block with description.', 'ai-blocks'),
+         'description' => __('Music album player block', 'ai-blocks'),
          'render_callback' => 'ai_audio_block_render_callback',
          'icon' => array(
             'src' => 'format-audio',
             'foreground' => '#000',
          ),
          //'category' => 'ai-blocks',
-         'category' => '',
+         'category' => 'common',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

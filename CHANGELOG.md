@@ -1,6 +1,11 @@
 AI Blocks
 =========
 
+1.5.4
+- Audio block album image
+
+1.5.3
+- Fix
 
 1.5.2
 - Fix
