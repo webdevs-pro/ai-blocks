@@ -55,7 +55,8 @@ if( function_exists('acf_register_block_type') ) {
             'src' => 'editor-alignleft',
             'foreground' => '#000',
          ),
-         'category' => 'ai-blocks',
+         //'category' => 'ai-blocks',
+         'category' => '',
          'mode' => 'auto',
          'supports' => array(
            'align' => false,

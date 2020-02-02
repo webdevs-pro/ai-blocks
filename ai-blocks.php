@@ -40,6 +40,7 @@ add_action( 'enqueue_block_editor_assets', 'ai_blocks_editor_styles' );
 
 // AI BLOCKS CATEGORY
 add_filter( 'block_categories', function( $categories, $post ) {
+
    return array_merge(
        $categories,
        array(

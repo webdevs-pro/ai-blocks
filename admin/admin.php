@@ -16,13 +16,13 @@ function ai_blocks_options() {
 		?>
 		<div class="wrap">
 			<h2><?php echo __('Advanced Elementor Widgets Settings', 'ai-blocks'); ?></h2>
-			<?php settings_errors(); ?> 
+			<?php settings_errors('ai-blocks-options'); ?> 
 
 
 			<form method="post" action="options.php"> 
 			<?php
-				settings_fields( 'aew-main-settings-group' );
-				do_settings_sections( 'ai-blocks-options-main' );
+				settings_fields( 'ai-blocks-main-settings-group' );
+				do_settings_sections( 'ai-blocks-options' );
 				submit_button(); 
 			?> 
 			</form> 
@@ -35,30 +35,30 @@ function ai_blocks_options() {
 // MAIN PLUGIN SETTINGS
 function ai_blocks_initialize_main_options() {  
 	register_setting(  
-		'aew-main-settings-group',  
+		'ai-blocks-main-settings-group',  
 		'ai_blocks_settings'  
 	);
 	add_settings_section(  
-		'main_section', // ID used to identify this section and with which to register options  
+		'ai_blocks_main_section', // ID used to identify this section and with which to register options  
 		'AI Blocks Settings', // Title to be displayed on the administration page  
 		'ai_blocks_main_section_callback', // Callback used to render the description of the section  
-		'ai-blocks-options-main' // Page on which to add this section of options  
+		'ai-blocks-options' // Page on which to add this section of options  
    );
    
    add_settings_field (   
 		'enabled_ai_blocks',	// ID used to identify the field throughout the theme  
 		'Enable AI Blocks',	// The label to the left of the option interface element  
 		'ai_blocks_enabled_ai_blocks_callback',	// The name of the function responsible for rendering the option interface  
-		'ai-blocks-options-main', // The page on which this option will be displayed  
-		'main_section' // The name of the section to which this field belongs  
+		'ai-blocks-options', // The page on which this option will be displayed  
+		'ai_blocks_main_section' // The name of the section to which this field belongs  
 	);
 
 	add_settings_field (   
 		'editor_allowed_blocks',	// ID used to identify the field throughout the theme  
 		'Allowed Editor Blocks',	// The label to the left of the option interface element  
 		'ai_blocks_editor_allowed_blocks_callback',	// The name of the function responsible for rendering the option interface  
-		'ai-blocks-options-main', // The page on which this option will be displayed  
-		'main_section' // The name of the section to which this field belongs  
+		'ai-blocks-options', // The page on which this option will be displayed  
+		'ai_blocks_main_section' // The name of the section to which this field belongs  
 	);
 
 
@@ -89,7 +89,7 @@ function ai_blocks_initialize_main_options() {
          ),
 
 		);
-		//$settings = wp_parse_args( get_option( 'ai_blocks_settings', $defaults), $defaults );
+
 		update_option('ai_blocks_settings', $defaults);
 	}
 
@@ -139,6 +139,7 @@ function ai_blocks_enabled_ai_blocks_callback($args) {
 
 	
 	<?php
+
 }
 
 function ai_blocks_editor_allowed_blocks_callback($args) {  

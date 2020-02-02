@@ -50,7 +50,8 @@ if( function_exists('acf_register_block_type') ) {
             'src' => 'format-image',
             'foreground' => '#000',
          ),
-         'category' => 'ai-blocks',
+         //'category' => 'ai-blocks',
+         'category' => '',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,

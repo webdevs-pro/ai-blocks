@@ -60,7 +60,8 @@ if( function_exists('acf_register_block_type') ) {
          'icon' => array(
             'src' => 'format-gallery'
          ),
-         'category' => 'ai-blocks',
+         //'category' => 'ai-blocks',
+         'category' => '',
          'mode' => 'edit',
          'supports' => array(
            'align' => false,
