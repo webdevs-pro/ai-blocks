@@ -197,13 +197,13 @@ add_filter( 'allowed_block_types', function( $allowed_blocks ) {
          array_push($allowed_blocks,'acf/ai-quote-block');
       }
       if (isset($options['enabled_ai_blocks']['video-block'])) {
-         array_push($allowed_blocks,'acf/ai-video-block');
+         array_push($allowed_blocks,'acf/ai-yt-video-block');
       }
       if (isset($options['enabled_ai_blocks']['image-block'])) {
          array_push($allowed_blocks,'acf/ai-image-block');
       }
       if (isset($options['enabled_ai_blocks']['gallery-block'])) {
-         array_push($allowed_blocks,'acf/ai-gallery-block');
+         array_push($allowed_blocks,'acf/ai-image-gallery-block');
       }
       if (isset($options['enabled_ai_blocks']['audio-block'])) {
          array_push($allowed_blocks,'acf/ai-audio-block');
