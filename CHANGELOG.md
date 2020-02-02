@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.5.1
+- Fix
+
 1.5
 - Plugin settings page
 

@@ -208,7 +208,8 @@ add_filter( 'allowed_block_types', function( $allowed_blocks ) {
       if (isset($options['enabled_ai_blocks']['audio-block'])) {
          array_push($allowed_blocks,'acf/ai-audio-block');
       }
-   }
+	}
+
 	return $allowed_blocks;
 });
 
