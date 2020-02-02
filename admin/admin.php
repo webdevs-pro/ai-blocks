@@ -188,8 +188,8 @@ add_filter( 'allowed_block_types', function( $allowed_blocks ) {
 
    $options = get_option('ai_blocks_settings');
    if (isset($options['editor_allowed_blocks']['enable'])) {
-      $allowed_blocks = array_values(array_filter(explode(PHP_EOL, $options['editor_allowed_blocks']['blocks'])));
 
+	  $allowed_blocks = explode("\n", str_replace("\r", "", $options['editor_allowed_blocks']['blocks']));
       if (isset($options['enabled_ai_blocks']['text-block'])) {
          array_push($allowed_blocks,'acf/ai-text-block');
       }
