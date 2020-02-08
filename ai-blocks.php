@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.5.4
+ * Version:     1.5.5
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -17,6 +17,9 @@ if (!defined('AI_BLOCKS_PLUGIN_DIR')) {
 // ADMIN
 include( AI_BLOCKS_PLUGIN_DIR . 'admin/admin.php');
 
+
+// REMOVE AUTOP
+remove_filter( 'the_content', 'wpautop' );
 
 
 

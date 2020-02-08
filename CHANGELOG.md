@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.5.5
+- Disable autop
+
 1.5.4
 - Audio block album image
 
