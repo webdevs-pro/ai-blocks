@@ -184,18 +184,35 @@ function ai_blocks_youtube_block_callback($args) {
    // $allowed_enable = isset( $options['ai_youtube_block']['api_key'] ) ? $options['editor_allowed_blocks']['enable'] : '';
 	?>
 		<label style="display: block">
-			<div><?php echo __( 'YouTube API key', 'ai-blocks' ); ?></div><br>
+			<div><?php echo __( 'YouTube API key', 'ai-blocks' ); ?></div>
 			<input type="text" size="44" name="ai_blocks_settings[ai_youtube_block][api_key]" value="<?php echo $options['ai_youtube_block']['api_key']; ?>">
 		</label>
-		<br>
 	<?php 
-		$api_url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=' . $options['ai_youtube_block']['api_key'];
-		$json_result = file_get_contents($api_url);
-		if ($json_result === false) {
-			echo 'No valid API key';
-		} else {
-			echo 'Key is valid';
+		// check API key
+		if (isset($options['ai_youtube_block']['api_key']) && $options['ai_youtube_block']['api_key'] != '') {
+			$api_url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=' . $options['ai_youtube_block']['api_key'];
+			$json_result = file_get_contents($api_url);
+			if ($json_result === false) {
+				echo 'Invalid API key';
+			} else {
+				echo 'API key is valid';
+			}
 		}
+
+	?>
+		<br>
+		<br>
+		<label style="display: block">
+			<div><?php echo __( 'Scroll top offset', 'ai-blocks' ); ?></div>
+			<input type="number" size="44" name="ai_blocks_settings[ai_youtube_block][offset]" value="<?php echo $options['ai_youtube_block']['offset'] ?: '50'; ?>">
+		</label>
+		<br>
+		<label style="display: block">
+			<div><?php echo __( 'Scrolltop speed', 'ai-blocks' ); ?></div>
+			<input type="number" size="44" name="ai_blocks_settings[ai_youtube_block][speed]" value="<?php echo $options['ai_youtube_block']['speed'] ?: '400'; ?>">
+		</label>
+		<br>
+	<?php
 }
 // AI BLOCKS
 $options = get_option('ai_blocks_settings')['enabled_ai_blocks'];

@@ -51,6 +51,12 @@ if( function_exists('acf_register_block_type') ) {
             $options = get_option('ai_blocks_settings');
             if (isset($options['ai_youtube_block']['api_key']) && $options['ai_youtube_block']['api_key'] != '') {
                wp_enqueue_script( 'ai-video-block-script', plugin_dir_url( __FILE__ ) . '../assets/ai-video-block-script.js', array('jquery'), '', true );
+               wp_localize_script( 'ai-video-block-script', 'ai_yt_block', 
+               array(
+                  'offset' => $options['ai_youtube_block']['offset'] ?: '50',
+                  'speed' => $options['ai_youtube_block']['speed'] ?: '400',
+               )
+            ); 
             }
          },
      ));

@@ -81,12 +81,9 @@
       var player_id = $(this).attr('data-player-id');
       var video_id = $(this).attr('data-video-id');
 
-      var offset = 50;
-      var speed = 400;
-
       $('html, body').animate({
-         scrollTop: $('#video-'+player_id).offset().top - offset
-      }, speed);
+         scrollTop: $('#video-'+player_id).offset().top - ai_yt_block.offset
+      },parseInt(ai_yt_block.speed));
 
       if($(this).hasClass('active')) { return; }
 

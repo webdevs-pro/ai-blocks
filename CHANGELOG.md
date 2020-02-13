@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.6.4
+- New: YouTube gallery scroll top offset and speed settings
+
 1.6.3
 - Fix: Plugin settings link on plugins admin page
 
