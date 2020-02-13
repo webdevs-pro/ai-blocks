@@ -1,9 +1,12 @@
 AI Blocks
 =========
 
+1.6.3
+- Fix: Plugin settings link on plugins admin page
+
 1.6.2
 - Fix: YouTube video block ai_block class missing for block
-- New: Plugin settings link on plugins amin page
+- New: Plugin settings link on plugins admin page
 
 1.6.1
 - YouTube video block API key check

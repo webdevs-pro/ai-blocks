@@ -1,7 +1,7 @@
 <?php
 
 // plugin settings link in plugins admin page
-add_filter('plugin_action_links_ai-blocks/ai-blocks.php', function ( $links ) {
+add_filter('plugin_action_links_' . AI_BLOCKS_PLUGIN_BASENAME, function ( $links ) {
 	$settings_link = '<a href="' . admin_url( 'options-general.php?page=ai-blocks-options' ) . '">' . __('Settings') . '</a>';
 
 	array_unshift( $links, $settings_link );

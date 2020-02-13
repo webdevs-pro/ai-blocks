@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.6.2
+ * Version:     1.6.3
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -12,7 +12,9 @@
 if (!defined('AI_BLOCKS_PLUGIN_DIR')) {
    define('AI_BLOCKS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 }
-
+if (!defined('AI_BLOCKS_PLUGIN_BASENAME')) {
+   define('AI_BLOCKS_PLUGIN_BASENAME', plugin_basename(__FILE__));
+}
 
 // ADMIN
 include( AI_BLOCKS_PLUGIN_DIR . 'admin/admin.php');
