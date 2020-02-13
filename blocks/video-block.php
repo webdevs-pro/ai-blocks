@@ -70,8 +70,6 @@ function ai_yt_video_block_render_callback($block) {
 
       if (isset($options['ai_youtube_block']['api_key']) && $options['ai_youtube_block']['api_key'] != '') {
 
-         // $api_key = 'AIzaSyA5u7y7K7ERXysU4-XG9UCUMTGipvpprV0';
-
          $video = AIgetYouTubeVideoID($block['data']['ai_yt_video_block_url']);
 
 
