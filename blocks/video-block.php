@@ -89,7 +89,7 @@ function ai_yt_video_block_render_callback($block) {
          $data = json_decode($json_result, true);
 
          ?>
-            <div class="ai_video_block">
+            <div class="ai_video_block ai_block">
 
                <div class="youtube-wrapper">
 
@@ -151,7 +151,7 @@ function ai_yt_video_block_render_callback($block) {
       } else {
          noapi:
          $video = AIgetYouTubeVideoID($block['data']['ai_yt_video_block_url']);
-         echo '<div class="ai_video_block">';
+         echo '<div class="ai_video_block ai_block">';
                echo '<div class="youtube_player">';
                if ($video['type'] == 'single') {
                   echo '<iframe style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;" width="1280" height="720" src="https://www.youtube.com/embed/' . $video['id'] . '" frameborder="0" allowfullscreen></iframe>';

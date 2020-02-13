@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.6.1
+ * Version:     1.6.2
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -67,4 +67,3 @@ if (is_admin()) {
       'ai-blocks'
    );
 }
-
