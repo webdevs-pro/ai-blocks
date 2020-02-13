@@ -3,7 +3,7 @@
  * Plugin Name: AI Blocks
  * Description: AI custom blocks.
  * Plugin URI:  http://web-devs.pro/
- * Version:     1.5.5
+ * Version:     1.6
  * Author:      web-devs.pro
  * Text Domain: ai-blocks
  */
@@ -27,6 +27,7 @@ remove_filter( 'the_content', 'wpautop' );
 function ai_blocks_styles() {
    wp_enqueue_style('ai-blocks-styles', plugin_dir_url( __FILE__ ) . 'assets/ai-blocks-styles.css' );
    //wp_enqueue_script( 'ai-blocks-script', plugin_dir_url( __FILE__ ) . 'assets/ai-blocks-script.js' , array(), '1.0.0', true, ['wp-blocks'] );
+   
 }
 add_action( 'enqueue_block_assets', 'ai_blocks_styles' );
 

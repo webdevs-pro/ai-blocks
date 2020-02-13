@@ -61,6 +61,13 @@ function ai_blocks_initialize_main_options() {
 		'ai_blocks_main_section' // The name of the section to which this field belongs  
 	);
 
+	add_settings_field (   
+		'ai_youtube_block',	// ID used to identify the field throughout the theme  
+		'YouTube Block Settings',	// The label to the left of the option interface element  
+		'ai_blocks_youtube_block_callback',	// The name of the function responsible for rendering the option interface  
+		'ai-blocks-options', // The page on which this option will be displayed  
+		'ai_blocks_main_section' // The name of the section to which this field belongs  
+	);
 
 
 	// DEFAULTS
@@ -153,13 +160,24 @@ function ai_blocks_editor_allowed_blocks_callback($args) {
 		</label>
 		<br>
 		<label style="display: block">
-			<textarea spellcheck="false" name="ai_blocks_settings[editor_allowed_blocks][blocks]" rows="10" cols="45"><?php echo $options['editor_allowed_blocks']['blocks']; ?></textarea>
+			<textarea spellcheck="false" name="ai_blocks_settings[editor_allowed_blocks][blocks]" cols="44" rows="10"><?php echo $options['editor_allowed_blocks']['blocks']; ?></textarea>
 		</label>
 	
 	<?php
 }
 
+function ai_blocks_youtube_block_callback($args) {  
 
+   $options = get_option('ai_blocks_settings');
+   // $allowed_enable = isset( $options['ai_youtube_block']['api_key'] ) ? $options['editor_allowed_blocks']['enable'] : '';
+	?>
+		<label style="display: block">
+			<div><?php echo __( 'YouTube API key', 'ai-blocks' ); ?></div><br>
+			<input type="text" size="44" name="ai_blocks_settings[ai_youtube_block][api_key]" value="<?php echo $options['ai_youtube_block']['api_key']; ?>">
+		</label>
+		<br>
+	<?php
+}
 // AI BLOCKS
 $options = get_option('ai_blocks_settings')['enabled_ai_blocks'];
 if (isset($options['text-block'])) {

@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.6
+- YouTube video block lazy loading and playlist gallery (API key required)
+
 1.5.5
 - Disable autop
 
