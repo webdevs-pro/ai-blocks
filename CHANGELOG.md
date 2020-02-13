@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.6.1
+- YouTube video block API key check
+
 1.6
 - YouTube video block lazy loading and playlist gallery (API key required)
 

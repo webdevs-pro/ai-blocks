@@ -176,7 +176,14 @@ function ai_blocks_youtube_block_callback($args) {
 			<input type="text" size="44" name="ai_blocks_settings[ai_youtube_block][api_key]" value="<?php echo $options['ai_youtube_block']['api_key']; ?>">
 		</label>
 		<br>
-	<?php
+	<?php 
+		$api_url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=' . $options['ai_youtube_block']['api_key'];
+		$json_result = file_get_contents($api_url);
+		if ($json_result === false) {
+			echo 'No valid API key';
+		} else {
+			echo 'Key is valid';
+		}
 }
 // AI BLOCKS
 $options = get_option('ai_blocks_settings')['enabled_ai_blocks'];

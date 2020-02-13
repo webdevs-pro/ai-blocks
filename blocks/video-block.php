@@ -70,8 +70,6 @@ function ai_yt_video_block_render_callback($block) {
 
       if (isset($options['ai_youtube_block']['api_key']) && $options['ai_youtube_block']['api_key'] != '') {
 
-         // $api_key = 'AIzaSyA5u7y7K7ERXysU4-XG9UCUMTGipvpprV0';
-
          $video = AIgetYouTubeVideoID($block['data']['ai_yt_video_block_url']);
 
 
@@ -82,7 +80,13 @@ function ai_yt_video_block_render_callback($block) {
             $api_url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=25&playlistId='. $video['id'] . '&key=' . $options['ai_youtube_block']['api_key'];
          }
 
-         $data = json_decode(file_get_contents($api_url), true);
+         $json_result = file_get_contents($api_url);
+
+         if ($json_result === false) {
+            goto noapi;
+         }
+
+         $data = json_decode($json_result, true);
 
          ?>
             <div class="ai_video_block">
@@ -145,6 +149,7 @@ function ai_yt_video_block_render_callback($block) {
          <?php
 
       } else {
+         noapi:
          $video = AIgetYouTubeVideoID($block['data']['ai_yt_video_block_url']);
          echo '<div class="ai_video_block">';
                echo '<div class="youtube_player">';
