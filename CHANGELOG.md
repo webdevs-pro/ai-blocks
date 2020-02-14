@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.6.6
+- Fix: PHP Warnings
+
 1.6.5
 - Tweak: Remove YouTube API key valid message o plugin settings page? only invalid key message will be displayed
 
