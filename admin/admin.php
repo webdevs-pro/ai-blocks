@@ -194,8 +194,6 @@ function ai_blocks_youtube_block_callback($args) {
 			$json_result = file_get_contents($api_url);
 			if ($json_result === false) {
 				echo 'Invalid API key';
-			} else {
-				echo 'API key is valid';
 			}
 		}
 
