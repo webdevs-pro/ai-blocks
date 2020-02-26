@@ -1,6 +1,9 @@
 AI Blocks
 =========
 
+1.6.7
+- PUC updated to 4.9
+
 1.6.6
 - Fix: PHP Warnings
 
