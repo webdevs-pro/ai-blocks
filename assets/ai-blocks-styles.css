@@ -223,7 +223,6 @@
 	margin-left: -34px;
 	margin-top: -24px;
 	transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
-	z-index: 63;
 	border: none;
 	background-color:transparent;
 	padding: 0;
