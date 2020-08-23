@@ -46,9 +46,9 @@
          // 2 (paused)
          // 3 (buffering)
          // 5 (video cued)
-         // console.log(state);
+         console.log(state);
 
-         var player_id = state.target.a.id;
+         var player_id = state.target.f.id;
 
          // highlight now playing video thumb in playlist
          if(state.data === -1) {
@@ -62,7 +62,7 @@
 
          // autoplay next video
          if(state.data === 0) {
-            console.log(player[state.target.a.id].getVideoUrl());
+            console.log(player[state.target.f.id].getVideoUrl());
             var total = ($('#'+player_id).parent().parent().find('.video-playlist-item')).length;
             var current = $('#'+player_id).parent().parent().find('.video-playlist-item.active').index() + 1;
             if (current < total) {

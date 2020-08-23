@@ -274,6 +274,7 @@
 	height: 32px;
 	margin-left: -23px;
 	margin-top: -16px;
+	z-index: 2;
 }
 .ai_video_block .video-playlist-item .ytp-large-play-button:focus {
 	outline: none;

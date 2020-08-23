@@ -1,6 +1,10 @@
 AI Blocks
 =========
 
+1.6.9
+- YouTube gallery fix
+- Update PUC to 4.10
+
 1.6.8
 - YouTube block play button z-index fixed
 
